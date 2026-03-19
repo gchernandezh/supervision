@@ -25,6 +25,8 @@ TEMPLATES=[{
 'APP_DIRS':True,
 }]
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -38,5 +40,7 @@ DATABASES = {
         },
     }
 }
+
+print("USANDO DB:", os.environ["DB_HOST"])
 
 STATIC_URL='/static/'
