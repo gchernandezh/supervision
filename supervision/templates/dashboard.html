@@ -1,0 +1,28 @@
+<html>
+<body style="font-family:Arial;background:#f2f2f2;">
+<h2 style="color:#0b4d3a;">Dashboard</h2>
+
+<div>
+Total: {{kpis.total}} |
+A tiempo: {{kpis.a_tiempo}} |
+Tarde: {{kpis.tarde}} |
+No entregado: {{kpis.no_entregado}}
+</div>
+
+<a href="/exportar/">Descargar CSV</a>
+
+<table border="1" style="width:100%;margin-top:20px;">
+<tr><th>Docente</th><th>Curso</th><th>Tipo</th><th>Estado</th></tr>
+
+{% for d in datos %}
+<tr>
+<td>{{d.docente_id}}</td>
+<td>{{d.nombre}}</td>
+<td>{{d.tipo_id}}</td>
+<td>{{d.estado}}</td>
+</tr>
+{% endfor %}
+
+</table>
+</body>
+</html>
